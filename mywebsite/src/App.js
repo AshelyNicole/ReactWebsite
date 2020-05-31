@@ -11,24 +11,46 @@ import { Jumbotron } from './components/Jumbotron';
 
 
 export class App extends Component {
+  state = {
+    visible: true
+  }
+  
+  
   render(){
+    let jumbo = this.state.visible ? (
+      <Jumbotron />
+    ) : ( null)
+
+    if (!this.state.visible) {
+      jumbo = null;
+    }
+    
+    let landingPage = <Route exact path= "/" component= {Home}  />
+
+    
+
+      
+    
+      
     return (
      <React.Fragment>
        <NavBar />
+       {jumbo} 
        <Layout>
         <Router>
           <Switch>
-            <Route exact path= "/" component= {Home} />
-            <Jumbotron />
-            <Route path= "/about" component= {About} />
-            <Route path= "/portfolio" component= {Portfolio} />
-            <Route path= "/contact" component= {Contact} />
+            {landingPage}
+            <Route className="pages" path= "/about" component= {About} />
+            <Route className="pages" path= "/portfolio" component= {Portfolio} />
+            <Route className="pages" path= "/contact" component= {Contact} />
             <Route component= {NoMatch} />
           </Switch>
         </Router>
        </Layout>
      </React.Fragment>
     );
+
+   
   }
 }
 

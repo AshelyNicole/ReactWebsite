@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const Styles = styled.div `
     .jumbo {
-        background: url(${"/assets/bg.jpeg"}) no-repeat fixed bottom;
+        background: url(${"/assets/background.jpeg"}) no-repeat fixed bottom;
         background-size: cover;
         color: #00000;
         width: 100%;
@@ -16,7 +16,7 @@ const Styles = styled.div `
 
     .overlay {
         background-color: #efefef;
-        opacity: 0.6;
+        opacity: 0.1;
         position: absolute;
         top: 0;
         left: 0;

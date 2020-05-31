@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import styled from 'styled-components';
+
 
 const Styles = styled.div`
     .homeBtn {
@@ -41,29 +42,37 @@ const Styles = styled.div`
     }
 `;
 
-export const Home = () => {
-    return (
-        <Styles>
-            <div className="landing-text">
-                <h1>
-                    Ashely Rumbaoa
-                </h1>
-                <h6>
-                    Full Stack Developer
-                </h6>
-                <div className="skillIcons">
-                    <div className="iconBox">
-                        <i className="devicon-react-original colored"></i>
-                        <i className="devicon-javascript-plain colored"></i>
-                        <i className="devicon-jquery-plain colored"></i>
-                        <i className="devicon-css3-plain colored"></i>
-                        <i className="devicon-bootstrap-plain colored"></i>
+
+export class Home extends Component {
+
+    render () {
+
+
+        return (
+            <Styles>
+                <div className="landing-text">
+                    <h1>
+                        Ashely Rumbaoa
+                    </h1>
+                    <h6>
+                        Full Stack Developer
+                    </h6>
+                    <div className="skillIcons">
+                        <div className="iconBox">
+                            <i className="devicon-react-original colored"></i>
+                            <i className="devicon-javascript-plain colored"></i>
+                            <i className="devicon-jquery-plain colored"></i>
+                            <i className="devicon-css3-plain colored"></i>
+                            <i className="devicon-bootstrap-plain colored"></i>
+                        </div>
                     </div>
+                    <Button className="btn btn-light homeBtn">
+                        <a href="./Portfolio">View My Work</a>
+                    </Button>
                 </div>
-                <Button className="btn btn-light homeBtn">
-                    <a href="./Portfolio">View My Work</a>
-                </Button>
-            </div>
-        </Styles>
-    )    
+            </Styles>
+        )    
+    }
 }
+
+export default Home;
