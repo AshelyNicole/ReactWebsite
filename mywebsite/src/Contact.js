@@ -1,5 +1,25 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+
+
+const Styles = styled.div `
+    .contact-heading {
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 0;
+        margin-bottom: 5rem;
+    }
+
+    .contact-heading h1{
+        font-size: 4rem;
+        opacity: .3;
+    }
+    
+    .contact-form {
+        align-item: center;
+    }
+`;
 
 export class Contact extends Component {
     state = {
@@ -13,25 +33,28 @@ export class Contact extends Component {
     render() {
       return (
         <React.Fragment>
-        <div>
-            <h1>
-                Contact
-            </h1>
-        </div>
-        <div className="contact-form">
-            <form method="POST">
-                <label htmlFor="name">Name</label>
-                <input type="text" name="name" />
+            <Styles>
+                <div className="contact-heading">
+                    <h1>
+                        Contact
+                    </h1>
+                </div>
+                <div className="contact-form">
+                    <form method="POST">
+                        <label htmlFor="name">Name: </label>< br/>
+                        <input type="text" name="name" /><br/>
+                        
+                        <label htmlFor="email">Email:</label><br/>
+                        <input type="email" name="email" /><br/>
+            
+                        <label htmlFor="message">Message:</label><br/>
+                        <textarea name="message" rows="3"></textarea>
+                        <br/>
+                        <input type="submit" />
+                    </form>
+                </div>
 
-                <label htmlFor="email">Email</label>
-                <input type="email" name="email" />
-    
-                <label htmlFor="message">Message</label>
-                <textarea name="message" rows="3"></textarea>
-
-                <input type="submit" />
-            </form>
-        </div>
+            </Styles>
         </React.Fragment>
       )
     }

@@ -15,7 +15,7 @@ const Styles = styled.div`
     }
     
     .about-heading h1{
-        font-size: 5rem;
+        font-size: 4rem;
         opacity: .3;
     }
     
