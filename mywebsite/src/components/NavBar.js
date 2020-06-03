@@ -36,11 +36,6 @@ export const NavBar = () => {
                             </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link href="/skills">
-                                Skills
-                            </Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
                             <Nav.Link href="/portfolio">
                                 Portfolio
                             </Nav.Link>
