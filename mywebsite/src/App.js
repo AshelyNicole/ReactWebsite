@@ -1,45 +1,27 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import { Home } from './Home';
-import { About } from './About';
-import { Portfolio } from './Portfolio';
-import { Contact } from './Contact';
+import { Home } from './components/Home';
+import { About } from './components/About';
+import { Portfolio } from './components/Portfolio';
+import { Contact } from './components/Contact';
 import { NoMatch } from './NoMatch';
-import { Layout } from './components/Layout';
-import { NavBar } from './components/NavBar';
-import { Jumbotron } from './components/Jumbotron';
+import { Layout } from './components/format/Layout';
+import { NavBar } from './components/format/NavBar';
+
+
 
 
 export class App extends Component {
-  state = {
-    visible: true
-  }
+
   
-  
-  render(){
-    let jumbo = this.state.visible ? (
-      <Jumbotron />
-    ) : ( null)
-
-    if (!this.state.visible) {
-      jumbo = null;
-    }
-    
-    let landingPage = <Route exact path= "/" component= {Home}  />
-
-    
-
-      
-    
-      
+  render(){  
     return (
      <React.Fragment>
        <NavBar />
-       {jumbo} 
        <Layout>
         <Router>
           <Switch>
-            {landingPage}
+            <Route exact path= "/" component= {Home}  />
             <Route className="pages" path= "/about" component= {About} />
             <Route className="pages" path= "/portfolio" component= {Portfolio} />
             <Route className="pages" path= "/contact" component= {Contact} />
