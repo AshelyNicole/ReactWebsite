@@ -33,9 +33,7 @@ const Styles = styled.div `
 `;
 
 
-
-
-export const Jumbotron = () => {
+function Jumbotron(){
     return (
         <Styles>
             <Jumbo fluid= {true} className="jumbo">
@@ -49,3 +47,5 @@ export const Jumbotron = () => {
         </Styles>
     )
 }
+
+export default Jumbotron;

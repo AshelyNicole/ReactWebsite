@@ -1,6 +1,12 @@
 import React, { Component  } from 'react';
 import styled from 'styled-components';
-import { Jumbotron } from './format/Jumbotron';
+import { Button } from 'react-bootstrap';
+import Jumbotron from './format/Jumbotron';
+import { Card } from 'react-bootstrap';
+import Navigation from './format/NavBar';
+import Books from './media/projectOne.png';
+import covid from './media/projectTwo.png';
+
 
 
 const Styles = styled.div`
@@ -10,19 +16,13 @@ const Styles = styled.div`
         justify-content: center; 
         margin: 5rem; 
     }
-
-    img {
-        flex: 1;
-        max-width: 25rem;
-        margin: .5rem;
-    }
     
     .portfolio-heading {
         text-align: center;
         text-transform: uppercase;
         line-height: 0;
     }
-    
+
     .portfolio-heading h1{
         font-size: 4rem;
         opacity: .3;
@@ -31,6 +31,12 @@ const Styles = styled.div`
     .portfolio-heading h6 {
         font-size: 2rem;
         font-weight: 300;
+    }
+
+    .cardTitle{
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 0;
     }
 
     .profile-description {
@@ -62,6 +68,7 @@ export class Portfolio extends Component {
     render() {
         return (
             <React.Fragment>
+                <Navigation />
                 <Jumbotron />
                 <Styles>
                     <div className="portfolio-heading">
@@ -69,41 +76,39 @@ export class Portfolio extends Component {
                         <h6>Recent Work</h6>
                     </div>
                     <div className="portfolio-item">
-                        <div className="portfolio-description">
-                            <h1>Book Search</h1>
-                            <p>
-                                A book search application that generates music based search criteria, user location and weather (mood).
-                            </p>
-                            <a href="https://yechan96.github.io/bootcamp_project1/">
-                                Visit Application
-                            </a>
-                            <br />
-                            <a href="https://github.com/yechan96/bootcamp_project1">
-                                Visit Repository
-                            </a>
-                        </div>
-                        <div className="portfolio-img">
-                            <img src="./assets/projectOne.png" alt="" />
-                        </div>
+                        <Card style={{ width: '18rem' }} className="portfolio-item">
+                            <Card.Img variant="top" className="portfolio-img" src={Books} />
+                            <Card.Body className="portfolio-description">
+                                <Card.Title className="cardTitle">Book Search</Card.Title>
+                                <Card.Text>
+                                    A book search application that generates music based search criteria, user location and weather (mood).
+                                </Card.Text>
+                                <Button variant="primary" href="https://yechan96.github.io/bootcamp_project1/">
+                                    Visit Application
+                                </Button>
+                                <Button variant="primary" href="https://github.com/yechan96/bootcamp_project1">
+                                    Visit Repository
+                                </Button>
+                            </Card.Body>
+                        </Card>
                     </div>
         
                     <div className="portfolio-item">
-                        <div className="portfolio-img">
-                            <img src="./assets/projectTwo.png" alt="" />
-                        </div>
-                        <div className="portfolio-description">
-                            <h1>COVID-19 Tracker</h1>
-                            <p>
+                        <Card style={{ width: '18rem' }} className="portfolio-item">
+                            <Card.Img variant="top" className="portfolio-img" src={covid} />
+                            <Card.Body className="portfolio-description">
+                                <Card.Title className="cardTitle">COVID-19 Tracker</Card.Title>
+                                <Card.Text>
                                 Visualize the spread and impact of Covid-19, subscribe for daily updates, and view stats.
-                            </p>
-                            <a href="http://plague.site">
-                                Visit Application
-                            </a>
-                            <br />
-                            <a href="https://github.com/yankidank/covid-19-tracker">
-                                Visit Repository
-                            </a>
-                        </div>
+                                </Card.Text>
+                                <Button variant="primary" href="http://plague.site">
+                                    Visit Application
+                                </Button>
+                                <Button variant="primary" href="https://github.com/yankidank/covid-19-tracker">
+                                    Visit Repository
+                                </Button>
+                            </Card.Body>
+                        </Card>
                     </div>
                 </Styles>
             </React.Fragment>

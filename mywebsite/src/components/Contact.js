@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import { Jumbotron } from './format/Jumbotron';
+import Jumbotron from './format/Jumbotron';
+import Navigation from './format/NavBar';
 
 const Styles = styled.div `
     .contact-heading {
@@ -33,6 +34,7 @@ export class Contact extends Component {
     render() {
       return (
         <React.Fragment>
+            <Navigation />
             <Jumbotron />
             <Styles>
                 <div className="contact-heading">
