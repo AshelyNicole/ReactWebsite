@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
-import Resume from '../media/RumbaoaResume2020.pdf';
 
 const Styles = styled.div`
     .navbar {
@@ -41,11 +40,6 @@ export class Navigation extends Component {
                             <Nav.Item>
                                 <Nav.Link>
                                     <Link to="/portfolio">Portfolio</Link>
-                                </Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link href={Resume}>
-                                    Resume
                                 </Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
